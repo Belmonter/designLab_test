@@ -1,0 +1,72 @@
+section.form 
+  .form__container
+    .form__wrapper 
+      .form__content 
+        h3.form__title.title Форма
+        .form__desc.desc Должна иметь проверку полей: обязательное поле, формат, минимальное значение. При несоответствии должна выводиться соответствующая ошибка. Поле «Телефон» должен содержать маску ввода.
+        form.form__menu.menu-form(enctype="multipart/form-data")
+          .menu-form__title Заказать проект
+          .menu-form__name 
+            label(for="") Название 
+              input.input(autocomplete="off" data-required data-validate type="text" name="project_name" placeholder="Название проекта")
+          .menu-form__wrapper
+            .menu-form__range.range-menu
+              .range-menu__title Стоимость
+              .range-menu__wrapper 
+                input.input(id="range-input" autocomplete="off" type="text" name="cost" placeholder="")
+                .range-menu__slider(id="range")
+            .menu-form__quantity.quantity-menu 
+              .quantity-menu__title Площадь
+              .quantity(data-quantity)
+                .quantity__button.quantity__button_minus(data-quantity-minus)
+                .quantity__input
+                  input(data-quantity-value type="text" name="" value="1 м2")
+                .quantity__button.quantity__button_plus(data-quantity-plus)
+            .menu-form__checkbox.checkbox-menu
+              .checkbox-menu__title Отделка
+              .checkbox-menu__wrapper 
+                label.checkbox-ios
+                  input(type="checkbox" name="whitebox")
+                  span.checkbox-ios-switch
+                p Вайтбокс
+          .menu-form__contacts.contacts-menu
+            .contacts-menu__wrapper 
+              .contacts-menu__phone.menu-phone
+                label Телефон
+                  input.input(id="phone" data-validate data-required data-tel-input maxlength="18" type="tel" name="tel" placeholder="+7")
+                  .menu-phone__check._icon-check
+                  .menu-phone__false._icon-x-close
+              .contacts-menu__email.menu-email
+                label Почта
+                  input.input(data-validate type="text" name="email" data-required="email" placeholder="mail@mail.com")
+                  .menu-email__check._icon-check
+                  .menu-email__false._icon-x-close
+          .menu-form__files.files-menu 
+            .files-menu__title Приложить файлы
+            .files-menu__wrapper
+              input.input(id="form_file" autocomplete="off" type="file" name="file" multiple accept="image/jpeg")
+              .files-menu__text Кликните или перенесите файлы в эту область. Только JPG, до 1 Мб
+            .files-menu__preview 
+          .menu-form__features.features-menu 
+            .features-menu__facilities.facilities-menu
+              .facilities-menu__title Удобства
+              select.form(name="facilities" data-scroll)
+                option(value="1" selected) любые
+                option(value="2") Кирпичный
+                option(value="3") Деревянный
+                option(value="5") Монолитный
+                option(value="6") Каркасный
+                option(value="7") Щитовой
+                option(value="8") Кирпичный
+                option(value="9") Деревянный
+                option(value="10") Каркасный
+            .features-menu__password.password-menu 
+              label Пароль
+                input.input(autocomplete="off" data-validate data-required type="password" name="password" placeholder="")
+                button.form__viewpass._icon-eye-off(type="button")
+          .menu-form__wishes.wishes-menu 
+            label Пожелания
+              input.input(id="wish-input" autocomplete="off" type="text" name="form[]" placeholder="")
+            .wishes-menu__preview.preview-wishes
+          button.menu-form__btn.btn-flare(type="submit") Отправить заявку
+            span.flare

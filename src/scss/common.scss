@@ -1,1 +1,232 @@
-// Заголовки, общие БЄМ блоки и проче...
+.title {
+  font-weight: 700;
+  @include adaptiveValue("font-size", 48, 40);
+  line-height: math.div(64, 48);
+  color: $gray;
+  @media (max-width: 590px) {
+    text-align: center;
+  }
+}
+.desc {
+  max-width: rem(884);
+  margin-top: rem(9);
+  @include adaptiveValue("font-size", 20, 16);
+  line-height: math.div(32, 20);
+  @media (max-width: 590px) {
+    margin-top: 17px;
+  }
+}
+
+input {
+  outline: none !important;
+  caret-color: $themeColor !important;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  &:focus {
+    border: 1px solid $themeColor !important;
+  }
+  &._form-error {
+    border: 1px solid #dc3545;
+  }
+}
+
+.checkbox-ios .checkbox-ios-switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 44px;
+  height: 24px;
+  border-radius: 50px;
+  vertical-align: top;
+  background: #babac2;
+  transition: 0.2s;
+}
+.checkbox-ios .checkbox-ios-switch:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  transform: translate(0px, -50%);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.15s;
+}
+.checkbox-ios input[type="checkbox"] {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkbox-ios input[type="checkbox"]:not(:disabled):active + .checkbox-ios-switch:before {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+}
+.checkbox-ios input[type="checkbox"]:checked + .checkbox-ios-switch {
+  background: $themeColor;
+}
+.checkbox-ios input[type="checkbox"]:checked + .checkbox-ios-switch:before {
+  transform: translate(21px, -50%);
+}
+
+/* Hover */
+.checkbox-ios input[type="checkbox"]:not(:disabled) + .checkbox-ios-switch {
+  cursor: pointer;
+}
+
+/* Disabled */
+.checkbox-ios input[type="checkbox"]:disabled + .checkbox-ios-switch {
+  filter: grayscale(70%);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.checkbox-ios input[type="checkbox"]:disabled + .checkbox-ios-switch:before {
+  background: #eee;
+}
+
+/* Focus */
+.checkbox-ios.focused .checkbox-ios-switch:before {
+  box-shadow: inset 0px 0px 4px #ff5623;
+}
+
+.btn-flare {
+  text-decoration: none;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.btn-flare .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  transform: skewX(-45deg);
+  animation: flareAnimation;
+  left: -150%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.733));
+  animation: flareAnimation 2s infinite linear;
+}
+
+@keyframes flareAnimation {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+[class*="__slide-left"] {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0px, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $whiteColor;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  &::before {
+    font-size: rem(32);
+  }
+  &:hover {
+    background-color: $themeColor;
+    &::before {
+      color: $whiteColor;
+    }
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+[class*="__slide-right"] {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translate(0px, -50%);
+  z-index: 10;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: $whiteColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  &::before {
+    font-size: rem(32);
+  }
+  &:hover {
+    background-color: $themeColor;
+    &::before {
+      color: $whiteColor;
+    }
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+[class*="__pagination"] {
+  margin-top: 44px;
+  display: flex;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    @include adaptiveValue("width", 16, 12);
+    @include adaptiveValue("height", 16, 12);
+    margin: 0 0 !important;
+    margin-right: 16px !important;
+    @media (max-width: 768px){
+      margin-right: 12px !important;
+    }
+  }
+}
+
+.underline-one {
+  color: $mainColor; /* Цвет обычной ссылки */
+  position: relative;
+  cursor: pointer;
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: all 0.3s ease 0s;
+  &:hover {
+    color: $themeColor;
+  }
+}
+
+.underline-one:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px; /* Высота линии */
+  background-color: $themeColor; /* Цвет подчеркивания при исчезании линии*/
+  transition: width 0.5s; /* Время эффекта */
+}
+
+.underline-one:hover:after {
+  content: "";
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px; /* Высота линии */
+  background-color: $themeColor; /* Цвет подчеркивания при появлении линии*/
+  transition: width 0.5s; /* Время эффекта */
+}

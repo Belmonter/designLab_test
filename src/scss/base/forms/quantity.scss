@@ -1,54 +1,66 @@
 //<QUANTITY>
 // Снипет (HTML): qa
 .quantity {
-	width: 88px;
-	height: 40px;
-	display: flex;
-	border: 1px solid rgba(166, 166, 166, 0.45);
-	// .quantity__button
-	&__button {
-		flex: 0 0 30px;
-		position: relative;
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transition: all 0.3s ease 0s;
-			margin: 0px 0px 0px -4.5px;
-			background-color: #a6a6a6;
-			width: 9px;
-			height: 1px;
-		}
-		@media (any-hover: hover) {
-			&:hover {
-				&::before,
-				&::after {
-					background-color: rgba(0, 0, 0, 0.5);
-				}
-			}
-		}
-		// .quantity__button_plus
-		&_plus {
-			&::before {
-				transform: rotate(-90deg);
-			}
-		}
-		// .quantity__button_minus
-		&_minus {
-		}
-	}
-	// .quantity__input
-	&__input {
-		flex: 1 1 auto;
-		input {
-			height: 100%;
-			color: #a6a6a6;
-			font-size: 12px;
-			width: 100%;
-			text-align: center;
-		}
-	}
+  width: 224px;
+  height: 56px;
+  display: flex;
+  @media (max-width: 780px){
+    margin-top: 15px !important;
+    width: 100%;
+  }
+  // .quantity__button
+  &__button {
+    flex: 0 0 56px;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #e1e1e1;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all 0.5s ease 0s;
+      margin: 0px 0px 0px -8.5px;
+      background-color: $themeColor;
+      width: 13px;
+      height: 2px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $themeColor;
+        border: unset;
+        &::before,
+        &::after {
+          background-color: $whiteColor;
+        }
+      }
+    }
+    // .quantity__button_plus
+    &_plus {
+      &::before {
+        transform: rotate(-90deg);
+      }
+    }
+    // .quantity__button_minus
+    &_minus {
+    }
+  }
+  &__button_minus {
+    border-radius: 4px 0px 0px 4px;
+  }
+  &__button_plus {
+    border-radius: 0px 4px 4px 0px;
+  }
+  // .quantity__input
+  &__input {
+    flex: 1 1 auto;
+    input {
+      height: 100%;
+      line-height: math.div(24 , 16);
+      width: 100%;
+      text-align: center;
+      outline: none;
+    }
+  }
 }

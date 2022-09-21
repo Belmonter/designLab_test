@@ -1,23 +1,30 @@
 .tabs {
-	// .tabs__navigation
-	&__navigation {
-		display: flex;
-	}
-	// .tabs__title
-	&__title {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
-		border-radius: rem(5);
-		&._tab-active {
-			border: 1px solid #000;
-		}
-	}
-	// .tabs__content
-	&__content {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
-	}
-	// .tabs__body
-	&__body {
-	}
+  @include adaptiveValue("margin-top", 71, 41);
+  // .tabs__navigation
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  // .tabs__title
+  &__title {
+    padding: rem(4) rem(16);
+    height: 40px;
+    background: #f2f4f7;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    &._tab-active {
+      background: $themeColor;
+      color: $whiteColor;
+    }
+  }
+  // .tabs__content
+  &__content {
+    @include adaptiveValue("margin-top", 40, 24);
+  }
+  // .tabs__body
+  &__body {
+  }
 }

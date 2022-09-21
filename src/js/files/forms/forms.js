@@ -105,9 +105,14 @@ export let formValidate = {
 			formRequiredItem.value = formRequiredItem.value.replace(" ", "");
 			if (this.emailTest(formRequiredItem)) {
 				this.addError(formRequiredItem);
+        formRequiredItem.parentElement.querySelector('.menu-email__check').style.display = 'none';
+        formRequiredItem.parentElement.querySelector('.menu-email__false').style.display = 'block';
 				error++;
 			} else {
 				this.removeError(formRequiredItem);
+        formRequiredItem.parentElement.querySelector('.menu-email__false').style.display = 'none';
+        formRequiredItem.parentElement.querySelector('.menu-email__check').style.display = 'block';
+
 			}
 		} else if (formRequiredItem.type === "checkbox" && !formRequiredItem.checked) {
 			this.addError(formRequiredItem);
@@ -267,7 +272,7 @@ export function formQuantity() {
 					value = 1;
 				}
 			}
-			targetElement.closest('[data-quantity]').querySelector('[data-quantity-value]').value = value;
+			targetElement.closest('[data-quantity]').querySelector('[data-quantity-value]').value = `${value} м2`;
 		}
 	});
 }

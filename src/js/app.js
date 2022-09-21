@@ -46,7 +46,7 @@ flsFunctions.isWebp();
 Документация: https://template.fls.guru/template-docs/modul-taby.html
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
@@ -75,25 +75,25 @@ import * as flsForms from "./files/forms/forms.js";
 
 /* Работа с полями формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-/*
+
 flsForms.formFieldsInit({
-	viewPass: false,
+	viewPass: true,
 	autoHeight: false
 });
-*/
+
 
 /* Oтправка формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль формы "колличество" */
-// flsForms.formQuantity();
+flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
 // flsForms.formRating();
 
 /* Модуль работы с select. */
-// import './libs/select.js'
+import './libs/select.js'
 
 /* Модуль работы с календарем */
 // import './files/forms/datepicker.js'
@@ -134,7 +134,7 @@ flsForms.formFieldsInit({
 Документация плагина: https://swiperjs.com/
 Сниппет(HTML): swiper
 */
-// import "./files/sliders.js";
+import "./files/sliders.js";
 
 // ========================================================================================================================================================================================================================================================
 // Модули работы с прокруткой страницы ========================================================================================================================================================================================================================================================
@@ -146,7 +146,7 @@ flsForms.formFieldsInit({
 Документация плагина: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar
 Сниппет(HTML): 
 */
-// import './files/scroll/simplebar.js';
+import './files/scroll/simplebar.js';
 
 // Ленивая (отложенная) загрузка картинок
 // Документация по работе в шаблоне: https://template.fls.guru/template-docs/modul-lenivaya-podgruzka-lazy-loading.html
@@ -164,7 +164,7 @@ import * as flsScroll from "./files/scroll/scroll.js";
 
 // Плавная навигация по странице
 // Документация: https://template.fls.guru/template-docs/modul-plavnoj-navigacii-po-stranice.html
-// flsScroll.pageNavigation();
+flsScroll.pageNavigation();
 
 // Функционал добавления классов к хедеру при прокрутке
 // Документация: https://template.fls.guru/template-docs/modul-dobavleniya-klassov-k-shapke-pri-prokrutke-stranicy.html
@@ -192,11 +192,16 @@ import * as flsScroll from "./files/scroll/scroll.js";
 // import "./libs/dynamic_adapt.js";
 
 /* Форматирование чисел */
-// import './libs/wNumb.min.js';
+import './libs/wNumb.min.js';
 
 // ========================================================================================================================================================================================================================================================
 // Прочее ========================================================================================================================================================================================================================================================
 // ========================================================================================================================================================================================================================================================
 /* Подключаем файлы со своим кодом */
+import './files/range.js'
+import './files/validation.js'
+import './files/formFile.js'
+import './files/wish.js'
+import './files/phonemask.js'
 import "./files/script.js";
 //============================================================================================================================================================================================================================================

@@ -1,0 +1,80 @@
+.gallery {
+  @include adaptiveValue("margin-top", 104, 54);
+  @include adaptiveValue("padding-bottom", 104, 68);
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .slide__wrapper {
+    height: 242px;
+    @include adaptiveValue("height", 242, 94);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .bathhouse {
+    &__slider {
+      position: relative;
+      &:hover{
+        .bathhouse__slide-left {
+          opacity: 1;
+          visibility: visible;
+        }
+        .bathhouse__slide-right {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .sauna {
+    &__slider {
+      position: relative;
+      &:hover{
+        .sauna__slide-left {
+          opacity: 1;
+          visibility: visible;
+        }
+        .sauna__slide-right {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .hamam {
+    &__slider {
+      position: relative;
+      &:hover{
+        .hamam__slide-left {
+          opacity: 1;
+          visibility: visible;
+        }
+        .hamam__slide-right {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  .hamam-2 {
+    &__slider {
+      position: relative;
+      &:hover{
+        .hamam-2__slide-left {
+          opacity: 1;
+          visibility: visible;
+        }
+        .hamam-2__slide-right {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

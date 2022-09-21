@@ -15,6 +15,22 @@
 	}
 }
 
+._icon-arrow-left:before {
+  content: "\e906";
+  color: #06c;
+}
+._icon-arrow-right:before {
+  content: "\e907";
+  color: #06c;
+}
+._icon-check:before {
+  content: "\e904";
+  color: #28a745;
+}
+._icon-x-close:before {
+  content: "\e905";
+  color: #dc3545;
+}
 ._icon-plus:before {
   content: "\e901";
   color: #06c;
@@ -31,4 +47,3 @@
   content: "\e900";
   color: #9b9b9e;
 }
-

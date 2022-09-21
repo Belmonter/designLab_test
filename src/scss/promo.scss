@@ -1,0 +1,25 @@
+.page {
+  @include adaptiveValue("padding-top", 83, 51);
+}
+.promo {
+  &__breadcrumbs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(8);
+    font-size: rem(14);
+    line-height: math.div(16 , 14);
+    color: $grayMiddle;
+    span {
+      display: block;
+    }
+  }
+  &__title {
+    @include adaptiveValue("margin-top", 15, 13);
+    text-align: center;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 64, 48);
+    line-height: math.div(64 , 64);
+    color: $gray;
+  }
+}
