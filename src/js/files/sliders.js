@@ -98,7 +98,7 @@ function initSliders() {
 				600: {
 					slidesPerView: 3,
 					spaceBetween: 15,
-					slidesPerGroup: 2,
+					slidesPerGroup: 3,
 					grid: {
 						rows: 2,
 						fill: 'row',
@@ -191,7 +191,7 @@ function initSliders() {
 				600: {
 					slidesPerView: 3,
 					spaceBetween: 15,
-					slidesPerGroup: 2,
+					slidesPerGroup: 3,
 					grid: {
 						rows: 2,
 						fill: 'row',
@@ -284,7 +284,7 @@ function initSliders() {
 				600: {
 					slidesPerView: 3,
 					spaceBetween: 15,
-					slidesPerGroup: 2,
+					slidesPerGroup: 3,
 					grid: {
 						rows: 2,
 						fill: 'row',
@@ -377,7 +377,7 @@ function initSliders() {
 				600: {
 					slidesPerView: 3,
 					spaceBetween: 15,
-					slidesPerGroup: 2,
+					slidesPerGroup: 3,
 					grid: {
 						rows: 2,
 						fill: 'row',
